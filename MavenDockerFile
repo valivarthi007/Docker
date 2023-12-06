@@ -1,8 +1,7 @@
 # Use Alpine Linux as the base image
 FROM alpine
 
-# Adding maintainer
-
+# Labeling
 LABEL MAINTAINER vdr007
 
 # Install OpenJDK 11 and Maven
@@ -12,14 +11,14 @@ RUN apk update \
     && rm -rf /var/cache/apk/*
 
 # Copy the maven.sh script to /etc/profile.d
-COPY maven.sh /etc/profile.d/
+COPY maven.sh /etc/profile.d
 
 # Make the maven.sh script executable
 RUN chmod +x /etc/profile.d/maven.sh
 
 # Set the environment variables for Maven
 ENV MAVEN_HOME /usr/share/maven
-ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
+ENV MAVEN_CONFIG "$MAVEN_HOME/conf"
 
 # Add Maven binaries to the PATH
 ENV PATH $PATH:$MAVEN_HOME/bin
@@ -27,11 +26,18 @@ ENV PATH $PATH:$MAVEN_HOME/bin
 # Set the working directory
 WORKDIR /app
 
-# Set Maven options to avoid "text file busy" error
-# ENV MAVEN_OPTS="--add-opens=java.base/java.util=ALL-UNNAMED"
-
 # Set the entry point to Maven
 ENTRYPOINT ["mvn"]
 
 # Default command to print Maven version information
 CMD ["--version"]
+
+
+
+# Maven.sh file 
+#!/bin/sh
+
+export MAVEN_HOME=/usr/share/maven
+export MAVEN_CONFIG="$MAVEN_HOME/conf"
+
+export PATH=$PATH:$MAVEN_HOME/bin
