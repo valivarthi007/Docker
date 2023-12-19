@@ -1,0 +1,259 @@
+:root {
+  --tree: #67a64b;
+  --green: #1a402a;
+  --dkgreen: #10261c;
+  --lightgreen: #67a64b;
+  --brown: #482121;
+  --fjalla: Fjalla One;
+  --subheading: "Catamaran", sans-serif;
+  --heading: "Anek Telugu", sans-serif;
+  --para: "Poppins", sans-serif;
+  --header: "Alegreya", serif;
+  --headings: 3.5rem;
+  --sub-headings: 2.5rem;
+  --texts: 1.5rem;
+  --forms: 1.2rem;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #188ccf75;
+
+  overflow-x: hidden;
+}
+h2 {
+  color: var(--brown);
+  font-family: var(--subheading);
+  font-size: var(--sub-headings);
+  margin: 0;
+}
+h3 {
+  font-family: var(--para);
+  font-size: var(--texts);
+}
+p {
+  font-family: var(--para);
+  font-size: var(--texts);
+}
+main {
+  padding: 1.5rem;
+}
+/* header styling */
+header {
+  padding: 0;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  background-color: #9eb384;
+}
+header h1 {
+  font-size: var(--headings);
+  font-family: var(--header);
+  font-weight: bolder;
+  margin: 0;
+  padding: 1rem 0 1.5rem 0;
+  text-align: center;
+  color: white;
+}
+/* navigation styling */
+nav {
+  font-family: var(--headings);
+  font-size: var(--sub-headings);
+  padding: 0rem;
+  padding-bottom: 1.5rem;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+nav a {
+  color: var(--brown);
+  text-decoration: none;
+  display: block;
+}
+nav a:hover {
+  color: white;
+}
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(214, 145, 5, 1) 7%,
+    rgba(218, 13, 79, 0.8183648459383753) 100%
+  );
+  height: 5px;
+}
+
+/* intro */
+
+#intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+#intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+/* Gallery  */
+#forest-gallery {
+  margin-top: 150px;
+  padding-bottom: 2rem;
+}
+#forest-gallery .gallery {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  /* overflow: hidden; */
+  gap: 1.5rem;
+}
+#forest-gallery .gallery .gall-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px var(--dkgreen);
+}
+.gall-item {
+  padding: 2px;
+}
+/* tables */
+.tables {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid green;
+  box-shadow: 10px 10px 5px 0px rgba(10, 206, 108, 0.75);
+}
+th,
+td {
+  text-align: left;
+  vertical-align: middle;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-family: var(--para);
+}
+
+th {
+  background-color: #04aa6d;
+  color: white;
+}
+tr {
+  border-bottom: 1px solid green;
+}
+tr:hover {
+  background-color: var(--dkgreen);
+  color: white;
+}
+
+ol,
+ol li {
+  color: darkgreen;
+  font-size: var(--texts);
+}
+/* contact form */
+#contact h2 {
+  margin-top: 50px;
+}
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border: 3px solid #555;
+}
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+option {
+  font-size: 25px;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+fieldset {
+  padding: 1.2rem;
+  background-color: var(--tree);
+}
+legend {
+  font-family: --para;
+  font-size: 2em;
+  color: white;
+}
+form {
+  padding: 1.5rem;
+  background-color: #1a402a96;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+label {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--brown);
+  padding: 1.5rem 0 16px 0;
+}
+.common {
+  font-size: 28px;
+  color: white;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+input[type="submit"] {
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid white;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 38px;
+  color: white;
+  background-color: var(--tree);
+}
+input[type="submit"]:hover {
+  color: var(--tree);
+  background-color: white;
+}
+
+/* footer */
+#footer {
+  margin-top: 50px;
+  padding: 5rem;
+  text-align: center;
+  background-color: #9eb38444;
+}
