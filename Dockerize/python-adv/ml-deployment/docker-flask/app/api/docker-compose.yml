@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+    mlapp:
+      container_name: mlapp
+      image: vdr007/mlapp
+      ports:
+        - "5000:5000"
+      build:
+        context: .
+        dockerfile: Dockerfile
